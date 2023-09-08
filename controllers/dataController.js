@@ -29,5 +29,6 @@ exports.getData = (req, res, next) => {
     track,
     github_file_url: 'https://github.com',
     github_repo_url: 'https://github.com',
+    status_code: 200,
   });
 };
