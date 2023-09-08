@@ -27,8 +27,9 @@ exports.getData = (req, res, next) => {
     current_day,
     utcTime,
     track,
-    github_file_url: 'https://github.com',
-    github_repo_url: 'https://github.com',
+    github_file_url:
+      'https://github.com/Drifty-Cyber/HNG/blob/4e414cbef3b1e6d3d1ab26f22a273726978a277a/controllers/dataController.js',
+    github_repo_url: 'https://github.com/Drifty-Cyber/HNG.git',
     status_code: 200,
   });
 };
