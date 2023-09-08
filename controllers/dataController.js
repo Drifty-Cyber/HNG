@@ -17,7 +17,19 @@ exports.getData = (req, res, next) => {
   const current_day = weekdays[dayOfWeekIndex];
 
   //   Get Current UTC time
-  const utc_time = today.toISOString();
+  function getUTCDateString() {
+    const currentDate = new Date();
+    const year = currentDate.getUTCFullYear();
+    const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getUTCDate()).padStart(2, '0');
+    const hours = String(currentDate.getUTCHours()).padStart(2, '0');
+    const minutes = String(currentDate.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(currentDate.getUTCSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
+  }
+  const utc_time = getUTCDateString();
+  //   console.log(utc_time);
 
   res.status(200).json({
     slack_name,
