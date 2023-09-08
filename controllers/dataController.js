@@ -17,12 +17,12 @@ exports.getData = (req, res, next) => {
   const current_day = weekdays[dayOfWeekIndex];
 
   //   Get Current UTC time
-  const utcTime = today.toISOString();
+  const utc_time = today.toISOString();
 
   res.status(200).json({
     slack_name,
     current_day,
-    utcTime,
+    utc_time,
     track,
     github_file_url:
       'https://github.com/Drifty-Cyber/HNG/blob/4e414cbef3b1e6d3d1ab26f22a273726978a277a/controllers/dataController.js',
