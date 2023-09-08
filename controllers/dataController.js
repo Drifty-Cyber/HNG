@@ -2,7 +2,7 @@ exports.getData = (req, res, next) => {
   // Get Slack name and Track from query object
   const { slack_name, track } = req.query;
 
-  // Get current day of the week
+  // Get current day of the week in string format
   const weekdays = [
     'Sunday',
     'Monday',
@@ -19,9 +19,6 @@ exports.getData = (req, res, next) => {
   //   Get Current UTC time
   const utcTime = today.toISOString();
 
-  console.log(current_day, utcTime);
-
-  console.log(slack_name, track);
   res.status(200).json({
     slack_name,
     current_day,
